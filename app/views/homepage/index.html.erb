@@ -1,0 +1,19 @@
+<h1>Home</h1>
+<% if logged_in? %>
+  <h3>You are logged in as <%= current_user.name %>!</h3>
+
+  <% if admin? %>
+    <h5>You are an admin!</h5>
+    <%= link_to "Show users", '/users' %>
+  <% end %>
+
+  <br><br>
+  <%= link_to "Profile", '/user-info' %>
+  <br><br>
+
+<% else %>
+  <%= link_to "login", '/login' %>
+  <br>
+  <%= link_to "signup", '/signup' %>
+<% end %>
+
